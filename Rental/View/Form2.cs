@@ -88,7 +88,7 @@ namespace Rental
                 item.Merk = kendaraan.merek;
                 item.Harga = kendaraan.harga;
                 item.Plat = kendaraan.platNomer;
-                item.Foto = Path.Combine(Application.StartupPath, "../../Assetimg/aset.png");
+                item.Foto = Path.Combine(Application.StartupPath, "../../Assetimg/"+kendaraan.img);
                 listView.Controls.Add(item);
             }
 

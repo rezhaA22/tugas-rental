@@ -29,7 +29,7 @@ namespace Rental.Modell.Context
             try 
             {
                
-                string dbName = @"C:\Users\user\Desktop\New folder\Rental\DB\DB_ Rental2.db";
+                string dbName = Path.Combine(Application.StartupPath, "../../../DB/DB_ Rental2.db");
               
                 string connectionString = string.Format("Data Source={0};FailIfMissing=True", dbName);
 

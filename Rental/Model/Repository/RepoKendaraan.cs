@@ -142,6 +142,7 @@ namespace Rental.Model.Repository
                             kendaraan.nama = dtr["NAMA"].ToString();
                             kendaraan.jenis_kendaraan = dtr["JENIS_KENDARAAN"].ToString();
                             kendaraan.harga = dtr["HARGA"].ToString();
+                            kendaraan.img = dtr["IMG"].ToString();
 
                             // tambahkan objek User ke dalam collection
                             list.Add(kendaraan);
@@ -194,6 +195,7 @@ namespace Rental.Model.Repository
                             kendaraan.nama = dtr["NAMA"].ToString();
                             kendaraan.jenis_kendaraan = dtr["JENIS_KENDARAAN"].ToString();
                             kendaraan.harga = dtr["HARGA"].ToString();
+                            kendaraan.img = dtr["IMG"].ToString();
 
                             // tambahkan objek User ke dalam collection
                             list.Add(kendaraan);
@@ -242,6 +244,7 @@ namespace Rental.Model.Repository
                             kendaraan.nama = dtr["NAMA"].ToString();
                             kendaraan.jenis_kendaraan = dtr["JENIS_KENDARAAN"].ToString();
                             kendaraan.harga = dtr["HARGA"].ToString();
+                            kendaraan.img = dtr["IMG"].ToString();
 
                             // tambahkan objek User ke dalam collection
                             list.Add(kendaraan);
