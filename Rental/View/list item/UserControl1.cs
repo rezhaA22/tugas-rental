@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Rental.View;
 
 namespace Rental
 {
@@ -80,7 +81,8 @@ namespace Rental
 
         private void bunifuButton3_Click(object sender, EventArgs e)
         {
-
+            SewaForm sewaForm=new SewaForm();
+            sewaForm.ShowDialog();
         }
     }
 }

@@ -16,5 +16,30 @@ namespace Rental.View
         {
             InitializeComponent();
         }
+
+        private void BunifuLabel17_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BunifuShapes2_ShapeChanged(object sender, Bunifu.UI.WinForms.BunifuShapes.ShapeChangedEventArgs e)
+        {
+
+        }
+
+        private void BunifuLabel33_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SewaForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BunifuButton1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

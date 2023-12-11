@@ -57,19 +57,19 @@ namespace Rental
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            do
-            {
-                cheklogin();
-                if (petugasLogin!=null) { break; }
+            //do
+            //{
+                //cheklogin();
+                //if (petugasLogin!=null) { break; }
 
-                if (MessageBox.Show("anda tidak login \n ingin login", "Konfirmasi", MessageBoxButtons.YesNo,
-                      MessageBoxIcon.Exclamation) == DialogResult.No)
-                {
-                    this.Close();
-                    return;
-                }
-                continue;
-            } while (true);
+                //if (MessageBox.Show("anda tidak login \n ingin login", "Konfirmasi", MessageBoxButtons.YesNo,
+                     // MessageBoxIcon.Exclamation) == DialogResult.No)
+                //{
+                    //this.Close();
+                   // return;
+                //}
+                //continue;
+            //} while (true);
 
             updetList(repo.ReadKendaraan());
             addDataDrop();
