@@ -546,8 +546,8 @@
             this.bunifuIconButton1.AllowMouseEffects = true;
             this.bunifuIconButton1.AnimationSpeed = 200;
             this.bunifuIconButton1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuIconButton1.BackgroundColor = System.Drawing.Color.DodgerBlue;
-            this.bunifuIconButton1.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.bunifuIconButton1.BackgroundColor = System.Drawing.Color.White;
+            this.bunifuIconButton1.BorderColor = System.Drawing.Color.White;
             this.bunifuIconButton1.BorderRadius = 1;
             this.bunifuIconButton1.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderStyles.Solid;
             this.bunifuIconButton1.BorderThickness = 1;
@@ -561,7 +561,7 @@
             this.bunifuIconButton1.CustomizableEdges = borderEdges2;
             this.bunifuIconButton1.DialogResult = System.Windows.Forms.DialogResult.None;
             this.bunifuIconButton1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuIconButton1.Image")));
-            this.bunifuIconButton1.ImageMargin = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            this.bunifuIconButton1.ImageMargin = new System.Windows.Forms.Padding(0);
             this.bunifuIconButton1.Location = new System.Drawing.Point(1396, 18);
             this.bunifuIconButton1.Name = "bunifuIconButton1";
             this.bunifuIconButton1.RoundBorders = false;

@@ -64,7 +64,7 @@
             // 
             // bunifuPanel1
             // 
-            this.bunifuPanel1.BackgroundColor = System.Drawing.Color.Beige;
+            this.bunifuPanel1.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
             this.bunifuPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuPanel1.BackgroundImage")));
             this.bunifuPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.bunifuPanel1.BorderColor = System.Drawing.Color.Transparent;
