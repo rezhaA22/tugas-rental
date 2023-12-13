@@ -15,6 +15,9 @@ namespace Rental
 {
     public partial class Form2 : Form
     {
+        public delegate void deleget();
+
+        public event deleget Close;
 
         private string filJenis="";
         private string filCat="";
@@ -160,6 +163,12 @@ namespace Rental
 
             // Pemanggilan  getDataFilter
             updetList(getFilter(filJenis, filCat, filHarga));
+        }
+
+        private void Form2_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Close();
+
         }
     }
 }

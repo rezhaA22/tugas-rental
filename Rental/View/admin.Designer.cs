@@ -765,6 +765,7 @@
             this.Controls.Add(this.bunifuTextBox1);
             this.Name = "admin";
             this.Text = "admin";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.admin_FormClosed);
             this.bunifuPanel1.ResumeLayout(false);
             this.bunifuPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

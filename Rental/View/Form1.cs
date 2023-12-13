@@ -32,12 +32,15 @@ namespace Rental
             if (user!=null){
                 if (user.hakAkses == "Admin")
                 {
-
-                    new admin(user).Show();
+                    admin TampilanaAdmin= new admin(user);
+                    TampilanaAdmin.Close += this.close;
+                    TampilanaAdmin.Show();
                 }
                 else if (user.hakAkses == "User")
                 {
-                    new Form2(user).Show();
+                    Form2 TampilanUser = new Form2(user);
+                    TampilanUser.Close += this.close;
+                    TampilanUser.Show();
                 }
                 this.Hide();
             }
@@ -50,5 +53,11 @@ namespace Rental
 
 
         }
+
+        public void close()
+        {
+            this.Close();
+        }
+
     }
 }

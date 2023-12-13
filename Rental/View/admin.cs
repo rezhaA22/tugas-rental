@@ -13,6 +13,10 @@ namespace Rental.View
 {
     public partial class admin : Form
     {
+        public delegate void deleget();
+
+        public event deleget Close;
+
         public Petugas AdminLogin;
         public admin(Petugas login)
         {
@@ -23,6 +27,11 @@ namespace Rental.View
         public void login(Petugas petugas)
         {
             this.AdminLogin = petugas;
+        }
+
+        private void admin_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Close();
         }
     }
 }

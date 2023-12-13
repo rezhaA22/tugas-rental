@@ -25,6 +25,7 @@ namespace Rental
             Application.SetCompatibleTextRenderingDefault(false);
             Form1 login = new Form1();
 
+
             Application.Run(login);
 
         }
