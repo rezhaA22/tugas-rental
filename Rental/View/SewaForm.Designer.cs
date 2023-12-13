@@ -39,7 +39,6 @@ namespace Rental.View
             this.bunifuLabel7 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuLabel8 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuLabel9 = new Bunifu.UI.WinForms.BunifuLabel();
-            this.nmpemesan = new Bunifu.UI.WinForms.BunifuLabel();
             this.harga = new Bunifu.UI.WinForms.BunifuLabel();
             this.denda = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuLabel17 = new Bunifu.UI.WinForms.BunifuLabel();
@@ -61,6 +60,7 @@ namespace Rental.View
             this.bunifuLabel3 = new Bunifu.UI.WinForms.BunifuLabel();
             this.tipe = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuLabel10 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.nmpemesan = new Bunifu.UI.WinForms.BunifuLabel();
             this.SuspendLayout();
             // 
             // bunifuLabel5
@@ -187,21 +187,6 @@ namespace Rental.View
             this.bunifuLabel9.Text = "Tanggal Kembali";
             this.bunifuLabel9.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.bunifuLabel9.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            // 
-            // nmpemesan
-            // 
-            this.nmpemesan.AllowParentOverrides = false;
-            this.nmpemesan.AutoEllipsis = false;
-            this.nmpemesan.CursorType = null;
-            this.nmpemesan.Font = new System.Drawing.Font("Segoe UI", 15F);
-            this.nmpemesan.Location = new System.Drawing.Point(431, 198);
-            this.nmpemesan.Name = "nmpemesan";
-            this.nmpemesan.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.nmpemesan.Size = new System.Drawing.Size(201, 35);
-            this.nmpemesan.TabIndex = 20;
-            this.nmpemesan.Text = "Nama Pemesanan       ";
-            this.nmpemesan.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.nmpemesan.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // harga
             // 
@@ -527,6 +512,7 @@ namespace Rental.View
             this.tglsewa.DisabledColor = System.Drawing.Color.Gray;
             this.tglsewa.DisplayWeekNumbers = false;
             this.tglsewa.DPHeight = 0;
+            this.tglsewa.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
             this.tglsewa.FillDatePicker = false;
             this.tglsewa.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tglsewa.ForeColor = System.Drawing.Color.Black;
@@ -535,7 +521,7 @@ namespace Rental.View
             this.tglsewa.IconLocation = Bunifu.UI.WinForms.BunifuDatePicker.Indicator.Right;
             this.tglsewa.LeftTextMargin = 5;
             this.tglsewa.Location = new System.Drawing.Point(428, 325);
-            this.tglsewa.MinimumSize = new System.Drawing.Size(0, 32);
+            this.tglsewa.MinimumSize = new System.Drawing.Size(4, 32);
             this.tglsewa.Name = "tglsewa";
             this.tglsewa.Size = new System.Drawing.Size(204, 32);
             this.tglsewa.TabIndex = 50;
@@ -551,6 +537,7 @@ namespace Rental.View
             this.tglkembali.DisabledColor = System.Drawing.Color.Gray;
             this.tglkembali.DisplayWeekNumbers = false;
             this.tglkembali.DPHeight = 0;
+            this.tglkembali.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
             this.tglkembali.FillDatePicker = false;
             this.tglkembali.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tglkembali.ForeColor = System.Drawing.Color.Black;
@@ -559,7 +546,7 @@ namespace Rental.View
             this.tglkembali.IconLocation = Bunifu.UI.WinForms.BunifuDatePicker.Indicator.Right;
             this.tglkembali.LeftTextMargin = 5;
             this.tglkembali.Location = new System.Drawing.Point(428, 366);
-            this.tglkembali.MinimumSize = new System.Drawing.Size(0, 32);
+            this.tglkembali.MinimumSize = new System.Drawing.Size(4, 32);
             this.tglkembali.Name = "tglkembali";
             this.tglkembali.Size = new System.Drawing.Size(204, 32);
             this.tglkembali.TabIndex = 51;
@@ -624,6 +611,21 @@ namespace Rental.View
             this.bunifuLabel10.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.bunifuLabel10.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
+            // nmpemesan
+            // 
+            this.nmpemesan.AllowParentOverrides = false;
+            this.nmpemesan.AutoEllipsis = false;
+            this.nmpemesan.CursorType = null;
+            this.nmpemesan.Font = new System.Drawing.Font("Segoe UI", 15F);
+            this.nmpemesan.Location = new System.Drawing.Point(431, 198);
+            this.nmpemesan.Name = "nmpemesan";
+            this.nmpemesan.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.nmpemesan.Size = new System.Drawing.Size(201, 35);
+            this.nmpemesan.TabIndex = 20;
+            this.nmpemesan.Text = "Nama Pemesanan       ";
+            this.nmpemesan.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.nmpemesan.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
             // SewaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -677,7 +679,6 @@ namespace Rental.View
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel7;
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel8;
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel9;
-        private Bunifu.UI.WinForms.BunifuLabel nmpemesan;
         private Bunifu.UI.WinForms.BunifuLabel harga;
         private Bunifu.UI.WinForms.BunifuLabel denda;
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel17;
@@ -699,5 +700,6 @@ namespace Rental.View
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel3;
         private Bunifu.UI.WinForms.BunifuLabel tipe;
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel10;
+        private Bunifu.UI.WinForms.BunifuLabel nmpemesan;
     }
 }

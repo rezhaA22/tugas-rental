@@ -48,3 +48,8 @@ C:\PAMPAM\TUGAS\Pemrograman\UAS2\Rental\obj\Debug\Rental.csproj.Fody.CopyLocal.c
 C:\PAMPAM\TUGAS\Pemrograman\UAS2\Rental\obj\Debug\Rental.csproj.CopyComplete
 C:\PAMPAM\TUGAS\Pemrograman\UAS2\Rental\obj\Debug\Rental.View.list_item.listKeranjang.resources
 C:\PAMPAM\TUGAS\Pemrograman\UAS2\Rental\obj\Debug\Rental.View.formkeranjang.resources
+C:\PAMPAM\TUGAS\Pemrograman\UAS2\Rental\obj\Debug\Rental.View.admin.resources
+C:\PAMPAM\TUGAS\Pemrograman\UAS2\Rental\obj\Debug\Rental.View.tambahmobil.resources
+C:\PAMPAM\TUGAS\Pemrograman\UAS2\Rental\obj\Debug\Rental.View.daftarriwayatadmin.resources
+C:\PAMPAM\TUGAS\Pemrograman\UAS2\Rental\obj\Debug\Rental.View.detailtransaksiadmin.resources
+C:\PAMPAM\TUGAS\Pemrograman\UAS2\Rental\obj\Debug\Rental.View.tambahuser.resources

@@ -1,5 +1,6 @@
 ﻿using Rental.Controler;
 using Rental.Model.Repository;
+using Rental.View;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,7 +22,7 @@ namespace Rental
             
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form2());
+            Application.Run(new daftarriwayatadmin());
         }
     }
 }

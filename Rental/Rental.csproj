@@ -230,6 +230,24 @@
     <Compile Include="Controler\Hasing.cs" />
     <Compile Include="Controler\ConLogin.cs" />
     <Compile Include="Controler\ConTrasaksi.cs" />
+    <Compile Include="View\admin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\admin.Designer.cs">
+      <DependentUpon>admin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\daftarriwayatadmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\daftarriwayatadmin.Designer.cs">
+      <DependentUpon>daftarriwayatadmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\detailtransaksiadmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\detailtransaksiadmin.Designer.cs">
+      <DependentUpon>detailtransaksiadmin.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -281,6 +299,27 @@
     <Compile Include="View\SewaForm.Designer.cs">
       <DependentUpon>SewaForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\tambahmobil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\tambahmobil.Designer.cs">
+      <DependentUpon>tambahmobil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\tambahuser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\tambahuser.Designer.cs">
+      <DependentUpon>tambahuser.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="View\admin.resx">
+      <DependentUpon>admin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\daftarriwayatadmin.resx">
+      <DependentUpon>daftarriwayatadmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\detailtransaksiadmin.resx">
+      <DependentUpon>detailtransaksiadmin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -307,6 +346,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\SewaForm.resx">
       <DependentUpon>SewaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\tambahmobil.resx">
+      <DependentUpon>tambahmobil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\tambahuser.resx">
+      <DependentUpon>tambahuser.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
