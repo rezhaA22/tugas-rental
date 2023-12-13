@@ -1,4 +1,5 @@
 ﻿using Rental.Controler;
+using Rental.Model.Entity;
 using Rental.Model.Repository;
 using Rental.View;
 using System;
@@ -22,7 +23,10 @@ namespace Rental
             
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new daftarriwayatadmin());
+            Form1 login = new Form1();
+
+            Application.Run(login);
+
         }
     }
 }

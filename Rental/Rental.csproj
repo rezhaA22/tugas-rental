@@ -230,6 +230,7 @@
     <Compile Include="Controler\Hasing.cs" />
     <Compile Include="Controler\ConLogin.cs" />
     <Compile Include="Controler\ConTrasaksi.cs" />
+    <Compile Include="Model\Entity\Login.cs" />
     <Compile Include="View\admin.cs">
       <SubType>Form</SubType>
     </Compile>

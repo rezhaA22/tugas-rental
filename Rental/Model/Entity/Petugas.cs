@@ -13,5 +13,6 @@ namespace Rental.Modell.Entity
         public string NomerTlp { get; set; }
         public string Alamat { get; set; }
         public string password { get; set; }
+        public string hakAkses { get; set; }
     }
 }

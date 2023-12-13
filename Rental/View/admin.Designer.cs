@@ -492,7 +492,7 @@
             this.bunifuPictureBox1.BorderRadius = 0;
             this.bunifuPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuPictureBox1.Image")));
             this.bunifuPictureBox1.IsCircle = false;
-            this.bunifuPictureBox1.Location = new System.Drawing.Point(85, 255);
+            this.bunifuPictureBox1.Location = new System.Drawing.Point(85, 120);
             this.bunifuPictureBox1.Name = "bunifuPictureBox1";
             this.bunifuPictureBox1.Size = new System.Drawing.Size(140, 69);
             this.bunifuPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -583,7 +583,7 @@
             this.bunifuPictureBox2.BorderRadius = 0;
             this.bunifuPictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("bunifuPictureBox2.Image")));
             this.bunifuPictureBox2.IsCircle = false;
-            this.bunifuPictureBox2.Location = new System.Drawing.Point(85, 24);
+            this.bunifuPictureBox2.Location = new System.Drawing.Point(85, -111);
             this.bunifuPictureBox2.Name = "bunifuPictureBox2";
             this.bunifuPictureBox2.Size = new System.Drawing.Size(140, 69);
             this.bunifuPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -748,7 +748,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1410, 1325);
+            this.ClientSize = new System.Drawing.Size(1410, 1055);
             this.Controls.Add(this.bunifuIconButton3);
             this.Controls.Add(this.bunifuIconButton2);
             this.Controls.Add(this.bunifuButton2);

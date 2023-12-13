@@ -1,5 +1,6 @@
 ﻿using Rental.Controler;
 using Rental.Modell.Entity;
+using Rental.View;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,10 +15,6 @@ namespace Rental
 {
     public partial class Form1 : Form
     {
-        public delegate void LoginEvent(Petugas petugas);
-
-        // deklarasi event ketika terjadi proses input data baru
-        public event LoginEvent Login;
 
         ConLogin controler = new ConLogin();
 
@@ -33,8 +30,16 @@ namespace Rental
             Petugas user = controler.login(id, pass);
 
             if (user!=null){
-                this.Close();
-                Login(user);
+                if (user.hakAkses == "Admin")
+                {
+
+                    new admin(user).Show();
+                }
+                else if (user.hakAkses == "User")
+                {
+                    new Form2(user).Show();
+                }
+                this.Hide();
             }
             else
             {

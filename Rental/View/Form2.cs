@@ -20,11 +20,13 @@ namespace Rental
         private string filCat="";
         private string filHarga;
 
-        private Petugas petugasLogin;
+        private Petugas UserLogin;
+
         ConDasbord repo = new ConDasbord();
 
-        public Form2()
+        public Form2(Petugas login)
         {
+            this.UserLogin = login;
             InitializeComponent();
         }
 
@@ -36,40 +38,9 @@ namespace Rental
             return listKendaraan;
         }
         
-        public void login(Petugas petugas)
-        {
-            this.petugasLogin = petugas;
-        }
-
-        private bool cheklogin()
-        {
-            if (petugasLogin != null)
-            {
-                return true;
-            }
-
-            Form1 login = new Form1();
-            login.Login += this.login;
-            login.ShowDialog();
-            return false;
-        }
-        
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            //do
-            //{
-                //cheklogin();
-                //if (petugasLogin!=null) { break; }
-
-                //if (MessageBox.Show("anda tidak login \n ingin login", "Konfirmasi", MessageBoxButtons.YesNo,
-                     // MessageBoxIcon.Exclamation) == DialogResult.No)
-                //{
-                    //this.Close();
-                   // return;
-                //}
-                //continue;
-            //} while (true);
 
             updetList(repo.ReadKendaraan());
             addDataDrop();

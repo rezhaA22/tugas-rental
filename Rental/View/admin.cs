@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Rental.Modell.Entity;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,16 @@ namespace Rental.View
 {
     public partial class admin : Form
     {
-        public admin()
+        public Petugas AdminLogin;
+        public admin(Petugas login)
         {
+            this.AdminLogin = login;
             InitializeComponent();
+        }
+
+        public void login(Petugas petugas)
+        {
+            this.AdminLogin = petugas;
         }
     }
 }

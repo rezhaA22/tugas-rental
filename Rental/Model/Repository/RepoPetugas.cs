@@ -26,8 +26,8 @@ namespace Rental.Model.Repository
             int result = 0;
 
             // deklarasi perintah SQL
-            string sql = @"insert into PETUGAS (NAMA,ALAMAT,NOMOR_TELEPONE,PASSWORD)
-                           values (@nama, @alamat,@no,@pas)";
+            string sql = @"insert into PETUGAS (NAMA,ALAMAT,NOMOR_TELEPONE,PASSWORD,Hak_akses)
+                           values (@nama, @alamat,@no,@pas,@hak)";
 
             // membuat objek command menggunakan blok using
             using (SQLiteCommand cmd = new SQLiteCommand(sql, _conn))
@@ -37,6 +37,7 @@ namespace Rental.Model.Repository
                 cmd.Parameters.AddWithValue("@alamat", petugas.Alamat);
                 cmd.Parameters.AddWithValue("@no", petugas.NomerTlp);
                 cmd.Parameters.AddWithValue("@pas", petugas.password);
+                cmd.Parameters.AddWithValue("@hak", petugas.hakAkses);
 
                 try
                 {
@@ -139,6 +140,7 @@ namespace Rental.Model.Repository
                             petugas.Alamat = dtr["ALAMAT"].ToString();
                             petugas.NomerTlp = dtr["NOMOR_TELEPHONE"].ToString();
                             petugas.password = dtr["PASSWORD"].ToString();
+                            petugas.hakAkses = dtr["Hak_akses"].ToString();
 
                             // tambahkan objek PETUGAS ke dalam collection
                             list.Add(petugas);
