@@ -109,3 +109,4 @@ C:\Users\user\Desktop\pemorgFinal\Rental\obj\Debug\Rental.csproj.Fody.CopyLocal.
 C:\Users\user\Desktop\pemorgFinal\Rental\obj\Debug\Rental.csproj.CopyComplete
 C:\Users\user\Desktop\pemorgFinal\Rental\obj\Debug\Rental.exe
 C:\Users\user\Desktop\pemorgFinal\Rental\obj\Debug\Rental.pdb
+C:\Users\user\Desktop\pemorgFinal\Rental\obj\Debug\Rental.View.list_item.listMobilAdmin.resources

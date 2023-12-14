@@ -26,7 +26,7 @@ namespace Rental.Model.Repository
             int result = 0;
 
             // deklarasi perintah SQL
-            string sql = @"insert into PETUGAS (NAMA,ALAMAT,NOMOR_TELEPONE,PASSWORD,Hak_akses)
+            string sql = @"insert into PETUGAS (NAMA,ALAMAT,NOMOR_TELEPHONE,PASSWORD,Hak_akses)
                            values (@nama, @alamat,@no,@pas,@hak)";
 
             // membuat objek command menggunakan blok using

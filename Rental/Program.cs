@@ -26,7 +26,7 @@ namespace Rental
             Form1 login = new Form1();
 
 
-            Application.Run(login);
+            Application.Run(new admin(new Modell.Entity.Petugas()));
 
         }
     }

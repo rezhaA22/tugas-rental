@@ -145,6 +145,7 @@
             this.dropHarga.Text = null;
             this.dropHarga.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
             this.dropHarga.TextLeftMargin = 5;
+            this.dropHarga.SelectedIndexChanged += new System.EventHandler(this.harga_SelectedIndexChanged);
             // 
             // bunifuLabel3
             // 
@@ -289,6 +290,7 @@
             this.dropTipe.Text = null;
             this.dropTipe.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
             this.dropTipe.TextLeftMargin = 5;
+            this.dropTipe.SelectedIndexChanged += new System.EventHandler(this.dropTipe_SelectedIndexChanged);
             // 
             // dropJenis
             // 
@@ -333,6 +335,7 @@
             this.dropJenis.Text = null;
             this.dropJenis.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
             this.dropJenis.TextLeftMargin = 5;
+            this.dropJenis.SelectedIndexChanged += new System.EventHandler(this.dropJenis_SelectedIndexChanged);
             // 
             // pictureBox2
             // 
@@ -483,6 +486,7 @@
             this.bunifuButton1.TextMarginLeft = 0;
             this.bunifuButton1.TextPadding = new System.Windows.Forms.Padding(0);
             this.bunifuButton1.UseDefaultRadiusAndThickness = true;
+            this.bunifuButton1.Click += new System.EventHandler(this.bunifuButton1_Click);
             // 
             // bunifuPictureBox1
             // 
@@ -492,7 +496,7 @@
             this.bunifuPictureBox1.BorderRadius = 0;
             this.bunifuPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuPictureBox1.Image")));
             this.bunifuPictureBox1.IsCircle = false;
-            this.bunifuPictureBox1.Location = new System.Drawing.Point(85, 120);
+            this.bunifuPictureBox1.Location = new System.Drawing.Point(74, 227);
             this.bunifuPictureBox1.Name = "bunifuPictureBox1";
             this.bunifuPictureBox1.Size = new System.Drawing.Size(140, 69);
             this.bunifuPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -574,6 +578,7 @@
             this.bunifuTextBox1.TextPlaceholder = "Cari Kendaraan";
             this.bunifuTextBox1.UseSystemPasswordChar = false;
             this.bunifuTextBox1.WordWrap = true;
+            this.bunifuTextBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.bunifuTextBox1_KeyPress);
             // 
             // bunifuPictureBox2
             // 
@@ -583,7 +588,7 @@
             this.bunifuPictureBox2.BorderRadius = 0;
             this.bunifuPictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("bunifuPictureBox2.Image")));
             this.bunifuPictureBox2.IsCircle = false;
-            this.bunifuPictureBox2.Location = new System.Drawing.Point(85, -111);
+            this.bunifuPictureBox2.Location = new System.Drawing.Point(74, -4);
             this.bunifuPictureBox2.Name = "bunifuPictureBox2";
             this.bunifuPictureBox2.Size = new System.Drawing.Size(140, 69);
             this.bunifuPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -743,11 +748,13 @@
             this.bunifuIconButton3.Size = new System.Drawing.Size(44, 44);
             this.bunifuIconButton3.Style = Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.ButtonStyles.Flat;
             this.bunifuIconButton3.TabIndex = 33;
+            this.bunifuIconButton3.Click += new System.EventHandler(this.bunifuIconButton3_Click);
             // 
             // admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1410, 1055);
             this.Controls.Add(this.bunifuIconButton3);
             this.Controls.Add(this.bunifuIconButton2);
@@ -766,6 +773,7 @@
             this.Name = "admin";
             this.Text = "admin";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.admin_FormClosed);
+            this.Load += new System.EventHandler(this.admin_Load);
             this.bunifuPanel1.ResumeLayout(false);
             this.bunifuPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

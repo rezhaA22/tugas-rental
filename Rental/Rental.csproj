@@ -226,6 +226,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controler\ConDasboardAdmin.cs" />
     <Compile Include="Controler\ConDasbord.cs" />
     <Compile Include="Controler\Hasing.cs" />
     <Compile Include="Controler\ConLogin.cs" />
@@ -288,6 +289,12 @@
     <Compile Include="View\list item\listKeranjang.Designer.cs">
       <DependentUpon>listKeranjang.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\list item\listMobilAdmin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\list item\listMobilAdmin.Designer.cs">
+      <DependentUpon>listMobilAdmin.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\list item\UserControl1.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -341,6 +348,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\list item\listKeranjang.resx">
       <DependentUpon>listKeranjang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\list item\listMobilAdmin.resx">
+      <DependentUpon>listMobilAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\list item\UserControl1.resx">
       <DependentUpon>UserControl1.cs</DependentUpon>

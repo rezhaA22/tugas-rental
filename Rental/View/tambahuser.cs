@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Rental.Controler;
+using Rental.Modell.Entity;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +14,36 @@ namespace Rental.View
 {
     public partial class tambahuser : Form
     {
+        ConDasboardAdmin controler = new ConDasboardAdmin();
         public tambahuser()
         {
             InitializeComponent();
+        }
+
+        private void bunifuButton1_Click(object sender, EventArgs e)
+        {
+            Petugas User = new Petugas();
+            User.Nama = bunifuTextBox1.Text;
+            User.Alamat = bunifuTextBox2.Text;
+            User.NomerTlp = bunifuTextBox4.Text;
+            User.password = bunifuTextBox5.Text;
+            string result = controler.addUser(User);
+            if (result.Equals(""))
+            {
+                MessageBox.Show("ADD USER BERHASIL", "SUCCSES",
+                 MessageBoxButtons.OK,
+                  MessageBoxIcon.Information);
+                 bunifuTextBox1.Text="";
+                 bunifuTextBox2.Text="";
+                 bunifuTextBox4.Text="";
+                 bunifuTextBox5.Text="";
+            }
+            else
+            {
+                MessageBox.Show(result, "GAGAL",
+                 MessageBoxButtons.OK,
+                  MessageBoxIcon.Warning);
+            }
         }
     }
 }

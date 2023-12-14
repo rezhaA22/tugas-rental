@@ -67,7 +67,6 @@ namespace Rental.Controler
 
             return list;
         }
-
         
 
     }
