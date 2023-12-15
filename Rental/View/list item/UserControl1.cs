@@ -8,13 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Rental.View;
+using Rental.Modell.Entity;
 
 namespace Rental
 {
     public partial class UserControl1 : UserControl
     {
-        public UserControl1()
+        Petugas user;
+        Kendaraan Kendaraan;
+        public UserControl1(Petugas user,Kendaraan kendaraan)
         {
+            this.user = user;
+            this.Kendaraan = kendaraan;
             InitializeComponent();
         }
 
@@ -81,7 +86,7 @@ namespace Rental
 
         private void bunifuButton3_Click(object sender, EventArgs e)
         {
-            SewaForm sewaForm=new SewaForm();
+            SewaForm sewaForm=new SewaForm(user,Kendaraan);
             sewaForm.ShowDialog();
         }
     }

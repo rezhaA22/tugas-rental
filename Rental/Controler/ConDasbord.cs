@@ -1,4 +1,5 @@
-﻿using Rental.Model.Repository;
+﻿using Rental.Model.Entity;
+using Rental.Model.Repository;
 using Rental.Modell.Context;
 using Rental.Modell.Entity;
 using System;
@@ -16,11 +17,13 @@ namespace Rental.Controler
         RepoKendaraan repoKendaraan;
         RepoJenisKendaraan repojenis;
         RepoCategory repoCategory;
+        RepoTransaksi repoTrasaksi;
         public ConDasbord()
         {
             repoKendaraan = new RepoKendaraan(context);
             repojenis = new RepoJenisKendaraan(context);
             repoCategory = new RepoCategory(context);
+            repoTrasaksi = new RepoTransaksi(context);
         }
 
         public List<Kendaraan> ReadKendaraan()
@@ -67,7 +70,26 @@ namespace Rental.Controler
 
             return list;
         }
-        
+        public int bikinTrs(Transaksi transaksi)
+        {
+            int result=0;
+
+            result = repoTrasaksi.Create(transaksi);
+
+            return result;
+        }
+
+        public List<TransaksiDanKendaraan> getTransaksi(Petugas user)
+        {
+            List<TransaksiDanKendaraan> listTS = new List<TransaksiDanKendaraan>();
+
+            listTS = repoTrasaksi.getListTS(user);
+
+            return listTS;
+        }
+
+
 
     }
+
 }

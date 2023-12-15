@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 
 using System.Data.SQLite;
+using Rental.Model.Entity;
 using Rental.Modell.Context;
 using Rental.Modell.Entity;
 
@@ -28,14 +29,11 @@ namespace Rental.Model.Repository
             // deklarasi perintah SQL
             string sql = @"insert into TRANSAKSI  ( ID_USER,
                                                     PLAT_NOMOR,
-                                                    ID_PETUGAS,
                                                     TGL_TRANSAKSI,
+                                                    TGL_SEWA,
                                                     TGL_HARUS_KEMBALI,
-                                                    TGL_KEMBALI,
-                                                    DENDA,
-                                                    HARGA,
-                                                    STATUS)
-                           values (@user,@plat,@petugas,@tglTS,@tglHK,@tglKem,@denda,@harga,@status)";
+                                                    HARGA)
+                           values (@user,@plat,@tglTS,@tglSewa,@tglHK,@harga)";
 
             // membuat objek command menggunakan blok using
             using (SQLiteCommand cmd = new SQLiteCommand(sql, _conn))
@@ -43,13 +41,10 @@ namespace Rental.Model.Repository
                 // mendaftarkan parameter dan mengeset nilainya
                 cmd.Parameters.AddWithValue("@user", transaksi.id_user);
                 cmd.Parameters.AddWithValue("@plat", transaksi.platNomer);
-                cmd.Parameters.AddWithValue("@petugas", transaksi.id_petugas);
                 cmd.Parameters.AddWithValue("@tglTS", transaksi.tgl_transaksi);
+                cmd.Parameters.AddWithValue("@tglSewa", transaksi.tgl_sewa);
                 cmd.Parameters.AddWithValue("@tglHK", transaksi.tgl_harusKembali);
-                cmd.Parameters.AddWithValue("@tglKem", transaksi.tgl_kembali);
-                cmd.Parameters.AddWithValue("@denda", transaksi.denda);
                 cmd.Parameters.AddWithValue("@harga", transaksi.harga);
-                cmd.Parameters.AddWithValue("@status", transaksi.status);
 
                 try
                 {
@@ -103,6 +98,49 @@ namespace Rental.Model.Repository
             return result;
         }
 
+        internal List<TransaksiDanKendaraan> getListTS(Petugas user)
+        {
+            // membuat objek collection untuk menampung objek JenisKendaraan
+            List<TransaksiDanKendaraan> list = new List<TransaksiDanKendaraan>();
+
+            try
+            {
+                // deklarasi perintah SQL
+                string sql = $"SELECT T.status, K.IMG, K.MEREK, K.CATEGORY,K.NAMA, T.PLAT_NOMOR " +
+                    $"FROM TRANSAKSI T JOIN KENDARAAN K ON T.PLAT_NOMOR = K.PLAT_NOMOR " +
+                    $"WHERE T.ID_USER = {user.id}";
+
+                // membuat objek command menggunakan blok using
+                using (SQLiteCommand cmd = new SQLiteCommand(sql, _conn))
+                {
+                    // membuat objek dtr (data reader) untuk menampung result set (hasil perintah SELECT)
+                    using (SQLiteDataReader dtr = cmd.ExecuteReader())
+                    {
+                        // panggil method Read untuk mendapatkan baris dari result set
+                        while (dtr.Read())
+                        {
+                            // proses konversi dari row result set ke object
+                            TransaksiDanKendaraan transaksi = new TransaksiDanKendaraan();
+                            transaksi.status = dtr["status"].ToString();
+                            transaksi.nama = dtr["NAMA"].ToString();
+                            transaksi.merek = dtr["MEREK"].ToString();
+                            transaksi.img = dtr["IMG"].ToString();
+                            transaksi.platNomer= dtr["PLAT_NOMOR"].ToString();
+                            transaksi.categori = dtr["CATEGORY"].ToString();
+
+                            // tambahkan objek JenisKendaraan ke dalam collection
+                            list.Add(transaksi);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.Print("ReadAll error: {0}", ex.Message);
+            }
+
+            return list;
+        }
 
         public List<Transaksi> ReadAll()
         {
@@ -134,6 +172,7 @@ namespace Rental.Model.Repository
                             transaksi.denda = dtr["DENDA"].ToString();
                             transaksi.harga = dtr["HARGA"].ToString();
                             transaksi.tgl_transaksi = dtr["TGL_TRANSAKSI"].ToString();
+                            transaksi.tgl_sewa = dtr["TGL_SEWA"].ToString();
                             transaksi.tgl_harusKembali = dtr["TGL_HARUS_KEMBALI"].ToString();
                             transaksi.tgl_kembali = dtr["TGL_KEMBALI"].ToString();
                             transaksi.total = dtr["TOTAL"].ToString();
@@ -152,7 +191,6 @@ namespace Rental.Model.Repository
             return list;
         }
 
-        // Method untuk menampilkan data mahasiwa berdasarkan pencarian nama
         
     }
 }

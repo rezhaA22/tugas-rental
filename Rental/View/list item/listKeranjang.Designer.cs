@@ -29,30 +29,29 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(listKeranjang));
-            this.bunifuLabel7 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.status = new Bunifu.UI.WinForms.BunifuLabel();
             this.foto = new System.Windows.Forms.PictureBox();
-            this.bunifuLabel5 = new Bunifu.UI.WinForms.BunifuLabel();
-            this.bunifuLabel8 = new Bunifu.UI.WinForms.BunifuLabel();
-            this.bunifuLabel9 = new Bunifu.UI.WinForms.BunifuLabel();
-            this.bunifuLabel10 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.nama = new Bunifu.UI.WinForms.BunifuLabel();
+            this.merek = new Bunifu.UI.WinForms.BunifuLabel();
+            this.tipe = new Bunifu.UI.WinForms.BunifuLabel();
+            this.plat = new Bunifu.UI.WinForms.BunifuLabel();
             ((System.ComponentModel.ISupportInitialize)(this.foto)).BeginInit();
             this.SuspendLayout();
             // 
-            // bunifuLabel7
+            // status
             // 
-            this.bunifuLabel7.AllowParentOverrides = false;
-            this.bunifuLabel7.AutoEllipsis = false;
-            this.bunifuLabel7.CursorType = null;
-            this.bunifuLabel7.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.bunifuLabel7.Location = new System.Drawing.Point(1059, 67);
-            this.bunifuLabel7.Name = "bunifuLabel7";
-            this.bunifuLabel7.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel7.Size = new System.Drawing.Size(181, 28);
-            this.bunifuLabel7.TabIndex = 6;
-            this.bunifuLabel7.Text = "Sedang Dikonfirmasi";
-            this.bunifuLabel7.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel7.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            this.bunifuLabel7.Click += new System.EventHandler(this.BunifuLabel7_Click);
+            this.status.AllowParentOverrides = false;
+            this.status.AutoEllipsis = false;
+            this.status.CursorType = null;
+            this.status.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.status.Location = new System.Drawing.Point(1059, 67);
+            this.status.Name = "status";
+            this.status.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.status.Size = new System.Drawing.Size(181, 28);
+            this.status.TabIndex = 6;
+            this.status.Text = "Sedang Dikonfirmasi";
+            this.status.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.status.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // foto
             // 
@@ -63,82 +62,80 @@
             this.foto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.foto.TabIndex = 31;
             this.foto.TabStop = false;
-            this.foto.Click += new System.EventHandler(this.Foto_Click);
             // 
-            // bunifuLabel5
+            // nama
             // 
-            this.bunifuLabel5.AllowParentOverrides = false;
-            this.bunifuLabel5.AutoEllipsis = false;
-            this.bunifuLabel5.CursorType = null;
-            this.bunifuLabel5.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.bunifuLabel5.Location = new System.Drawing.Point(238, 67);
-            this.bunifuLabel5.Name = "bunifuLabel5";
-            this.bunifuLabel5.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel5.Size = new System.Drawing.Size(52, 28);
-            this.bunifuLabel5.TabIndex = 32;
-            this.bunifuLabel5.Text = "Nama";
-            this.bunifuLabel5.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel5.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.nama.AllowParentOverrides = false;
+            this.nama.AutoEllipsis = false;
+            this.nama.CursorType = null;
+            this.nama.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.nama.Location = new System.Drawing.Point(238, 67);
+            this.nama.Name = "nama";
+            this.nama.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.nama.Size = new System.Drawing.Size(52, 28);
+            this.nama.TabIndex = 32;
+            this.nama.Text = "Nama";
+            this.nama.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.nama.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
-            // bunifuLabel8
+            // merek
             // 
-            this.bunifuLabel8.AllowParentOverrides = false;
-            this.bunifuLabel8.AutoEllipsis = false;
-            this.bunifuLabel8.CursorType = null;
-            this.bunifuLabel8.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.bunifuLabel8.Location = new System.Drawing.Point(461, 67);
-            this.bunifuLabel8.Name = "bunifuLabel8";
-            this.bunifuLabel8.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel8.Size = new System.Drawing.Size(45, 28);
-            this.bunifuLabel8.TabIndex = 33;
-            this.bunifuLabel8.Text = "Merk";
-            this.bunifuLabel8.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel8.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.merek.AllowParentOverrides = false;
+            this.merek.AutoEllipsis = false;
+            this.merek.CursorType = null;
+            this.merek.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.merek.Location = new System.Drawing.Point(461, 67);
+            this.merek.Name = "merek";
+            this.merek.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.merek.Size = new System.Drawing.Size(45, 28);
+            this.merek.TabIndex = 33;
+            this.merek.Text = "Merk";
+            this.merek.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.merek.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
-            // bunifuLabel9
+            // tipe
             // 
-            this.bunifuLabel9.AllowParentOverrides = false;
-            this.bunifuLabel9.AutoEllipsis = false;
-            this.bunifuLabel9.CursorType = null;
-            this.bunifuLabel9.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.bunifuLabel9.Location = new System.Drawing.Point(684, 67);
-            this.bunifuLabel9.Name = "bunifuLabel9";
-            this.bunifuLabel9.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel9.Size = new System.Drawing.Size(37, 28);
-            this.bunifuLabel9.TabIndex = 34;
-            this.bunifuLabel9.Text = "Tipe";
-            this.bunifuLabel9.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel9.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.tipe.AllowParentOverrides = false;
+            this.tipe.AutoEllipsis = false;
+            this.tipe.CursorType = null;
+            this.tipe.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.tipe.Location = new System.Drawing.Point(684, 67);
+            this.tipe.Name = "tipe";
+            this.tipe.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.tipe.Size = new System.Drawing.Size(37, 28);
+            this.tipe.TabIndex = 34;
+            this.tipe.Text = "Tipe";
+            this.tipe.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.tipe.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
-            // bunifuLabel10
+            // plat
             // 
-            this.bunifuLabel10.AllowParentOverrides = false;
-            this.bunifuLabel10.AutoEllipsis = false;
-            this.bunifuLabel10.CursorType = null;
-            this.bunifuLabel10.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.bunifuLabel10.Location = new System.Drawing.Point(907, 67);
-            this.bunifuLabel10.Name = "bunifuLabel10";
-            this.bunifuLabel10.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel10.Size = new System.Drawing.Size(33, 28);
-            this.bunifuLabel10.TabIndex = 35;
-            this.bunifuLabel10.Text = "Plat";
-            this.bunifuLabel10.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel10.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.plat.AllowParentOverrides = false;
+            this.plat.AutoEllipsis = false;
+            this.plat.CursorType = null;
+            this.plat.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.plat.Location = new System.Drawing.Point(907, 67);
+            this.plat.Name = "plat";
+            this.plat.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.plat.Size = new System.Drawing.Size(33, 28);
+            this.plat.TabIndex = 35;
+            this.plat.Text = "Plat";
+            this.plat.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.plat.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // listKeranjang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.bunifuLabel10);
-            this.Controls.Add(this.bunifuLabel9);
-            this.Controls.Add(this.bunifuLabel8);
-            this.Controls.Add(this.bunifuLabel5);
+            this.Controls.Add(this.plat);
+            this.Controls.Add(this.tipe);
+            this.Controls.Add(this.merek);
+            this.Controls.Add(this.nama);
             this.Controls.Add(this.foto);
-            this.Controls.Add(this.bunifuLabel7);
+            this.Controls.Add(this.status);
             this.Name = "listKeranjang";
             this.Size = new System.Drawing.Size(1329, 162);
-            this.Load += new System.EventHandler(this.ListKeranjang_Load);
             ((System.ComponentModel.ISupportInitialize)(this.foto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -146,11 +143,11 @@
         }
 
         #endregion
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel7;
+        private Bunifu.UI.WinForms.BunifuLabel status;
         private System.Windows.Forms.PictureBox foto;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel5;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel8;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel9;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel10;
+        private Bunifu.UI.WinForms.BunifuLabel nama;
+        private Bunifu.UI.WinForms.BunifuLabel merek;
+        private Bunifu.UI.WinForms.BunifuLabel tipe;
+        private Bunifu.UI.WinForms.BunifuLabel plat;
     }
 }

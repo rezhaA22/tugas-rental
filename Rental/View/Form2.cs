@@ -1,5 +1,6 @@
 ﻿using Rental.Controler;
 using Rental.Modell.Entity;
+using Rental.View;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -56,7 +57,7 @@ namespace Rental
 
             foreach (Kendaraan kendaraan in listkendaraan)
             {
-                UserControl1 item = new UserControl1();
+                UserControl1 item = new UserControl1(UserLogin,kendaraan);
                 item.Title = kendaraan.nama;
                 item.Tipe = kendaraan.categori;
                 item.Merk = kendaraan.merek;
@@ -118,6 +119,7 @@ namespace Rental
 
         private void dropJenis_SelectedIndexChanged(object sender, EventArgs e)
         {
+            bunifuTextBox1.Text = "";
             if (dropJenis.SelectedIndex != 0)
             {
                 filJenis = dropJenis.SelectedItem.ToString();
@@ -137,6 +139,8 @@ namespace Rental
 
         private void dropTipe_SelectedIndexChanged(object sender, EventArgs e)
         {
+            bunifuTextBox1.Text = "";
+
             if (dropTipe.SelectedIndex != 0)
             {
                 filCat = dropTipe.SelectedItem.ToString();
@@ -152,6 +156,8 @@ namespace Rental
 
         private void harga_SelectedIndexChanged(object sender, EventArgs e)
         {
+            bunifuTextBox1.Text = "";
+
             if (dropHarga.SelectedIndex != 0)
             {
                 filHarga = (dropHarga.SelectedIndex == 1) ? "ASC" : "DESC";
@@ -168,6 +174,12 @@ namespace Rental
         private void Form2_FormClosed(object sender, FormClosedEventArgs e)
         {
             Close();
+
+        }
+
+        private void bunifuIconButton1_Click(object sender, EventArgs e)
+        {
+            new formkeranjang(UserLogin).ShowDialog();
 
         }
     }

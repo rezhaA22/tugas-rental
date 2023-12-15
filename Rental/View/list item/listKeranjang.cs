@@ -16,45 +16,65 @@ namespace Rental.View.list_item
         {
             InitializeComponent();
         }
+        #region Properties
+        private string _merk;
+        private string _tipe;
+        private string _plat;
+        private string _nama;
+        private string _status;
+        private string _foto;
 
-        private void BunifuLabel4_Click(object sender, EventArgs e)
+        
+
+        [Category("Custom Props")]
+        public string Merk
         {
+            get { return _merk; }
+            set { _merk = value; merek.Text = value; }
 
         }
 
-        private void ListKeranjang_Load(object sender, EventArgs e)
+        [Category("Custom Props")]
+        public string Tipe
         {
+            get { return _tipe; }
+            set { _tipe = value; tipe.Text = value; }
 
         }
 
-        private void BunifuLabel1_Click(object sender, EventArgs e)
+        [Category("Custom Props")]
+        public string Plat
         {
+            get { return _plat; }
+            set { _plat = value; plat.Text = value; }
 
         }
 
-        private void Foto_Click(object sender, EventArgs e)
+        [Category("Custom Props")]
+        public string Nama
         {
+            get { return _nama; }
+            set { _nama = value; nama.Text = value; }
+
+        }
+        [Category("Custom Props")]
+        public string Status
+        {
+            get { return _status; }
+            set { _status = value; status.Text = value; }
 
         }
 
-        private void BunifuLabel2_Click(object sender, EventArgs e)
-        {
 
+        [Category("Custom Props")]
+        public string Foto
+
+        {
+            get { return _foto; }
+            set { _foto = value; foto.Image = new Bitmap(value); }
         }
 
-        private void BunifuLabel3_Click(object sender, EventArgs e)
-        {
+        #endregion
 
-        }
-
-        private void BunifuLabel6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void BunifuLabel7_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

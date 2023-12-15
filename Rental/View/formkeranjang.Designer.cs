@@ -28,30 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.listKeranjang1 = new Rental.View.list_item.listKeranjang();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.SuspendLayout();
             // 
-            // listKeranjang1
+            // flowLayoutPanel1
             // 
-            this.listKeranjang1.Location = new System.Drawing.Point(0, 0);
-            this.listKeranjang1.Name = "listKeranjang1";
-            this.listKeranjang1.Size = new System.Drawing.Size(1329, 162);
-            this.listKeranjang1.TabIndex = 1;
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1331, 767);
+            this.flowLayoutPanel1.TabIndex = 0;
             // 
             // formkeranjang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1331, 767);
-            this.Controls.Add(this.listKeranjang1);
+            this.Controls.Add(this.flowLayoutPanel1);
             this.Name = "formkeranjang";
             this.Text = "formkeranjang";
+            this.Load += new System.EventHandler(this.formkeranjang_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private list_item.listKeranjang listKeranjang1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }
