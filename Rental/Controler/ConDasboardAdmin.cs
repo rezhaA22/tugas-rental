@@ -104,5 +104,48 @@ namespace Rental.Controler
 
             return list;
         }
+
+        internal string  addMobil(Kendaraan kendaraan)
+        {
+            String pesan = "";
+            if (kendaraan.nama.Equals(""))
+            {
+                pesan += "nama\n";
+            }
+            if (kendaraan.platNomer.Equals(""))
+            {
+                pesan += "plat Nomer\n";
+            }
+            if (kendaraan.categori.Equals(""))
+            {
+                pesan += "categori\n";
+            }
+            if (kendaraan.harga.Equals(""))
+            {
+                pesan += "harga\n";
+            }
+            if (kendaraan.merek.Equals(""))
+            {
+                pesan += "merek\n";
+            }
+            if (kendaraan.jenis_kendaraan.Equals(""))
+            {
+                pesan += "jenis kendaraan\n";
+            }
+            if (kendaraan.img.Equals(""))
+            {
+                pesan += "img \n";
+            }
+            if (!pesan.Equals(""))
+            {
+
+                return pesan + "gak boleh kosong!!!";
+            }
+            if(repoKendaraan.Create(kendaraan) <= 0)
+            {
+                return "data gagal di tambah";
+            }
+            return "";
+        }
     }
 }

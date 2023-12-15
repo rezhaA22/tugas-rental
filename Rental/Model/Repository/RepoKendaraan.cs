@@ -25,20 +25,14 @@ namespace Rental.Model.Repository
             int result = 0;
 
             // deklarasi perintah SQL
-            string sql = @"insert into KENDARAAN (PLAT_NOMOR,CATEGORY,MEREK,NAMA,JENI_KENDARAAN,IMG,HARGA)
-                           values (@PLAT, @CAT,@MEREK, @NAMA,@JENI,@img,@harga)";
+            string sql = $"insert into KENDARAAN (PLAT_NOMOR,CATEGORY,MEREK,NAMA,JENIS_KENDARAAN,IMG,HARGA) " +
+                            $"values ('{kendaraan.platNomer}', '{kendaraan.categori}','{kendaraan.merek}','{kendaraan.nama}'," +
+                            $"'{kendaraan.jenis_kendaraan}','{kendaraan.img}'" +
+                            $",'{kendaraan.harga}')";
 
             // membuat objek command menggunakan blok using
             using (SQLiteCommand cmd = new SQLiteCommand(sql, _conn))
             {
-                // mendaftarkan parameter dan mengeset nilainya
-                cmd.Parameters.AddWithValue("@PLAT", kendaraan.platNomer);
-                cmd.Parameters.AddWithValue("@CAT", kendaraan.categori);
-                cmd.Parameters.AddWithValue("@MEREK", kendaraan.merek);
-                cmd.Parameters.AddWithValue("@NAMA", kendaraan.nama);
-                cmd.Parameters.AddWithValue("@JENIS", kendaraan.jenis_kendaraan);
-                cmd.Parameters.AddWithValue("@img", kendaraan.img);
-                cmd.Parameters.AddWithValue("@harga", kendaraan.harga);
 
                 try
                 {

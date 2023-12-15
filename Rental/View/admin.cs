@@ -179,5 +179,16 @@ namespace Rental.View
             tambahuser formAddUser = new tambahuser();
             formAddUser.ShowDialog();
         }
+
+        private void bunifuIconButton2_Click(object sender, EventArgs e)
+        {
+            tambahmobil Formtambahmobil = new tambahmobil();
+            Formtambahmobil.ShowDialog();
+        }
+
+        private void bunifuIconButton1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

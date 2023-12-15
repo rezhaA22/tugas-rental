@@ -95,6 +95,7 @@
             this.bunifuIconButton1.Size = new System.Drawing.Size(46, 44);
             this.bunifuIconButton1.Style = Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.ButtonStyles.Flat;
             this.bunifuIconButton1.TabIndex = 29;
+            this.bunifuIconButton1.Click += new System.EventHandler(this.bunifuIconButton1_Click);
             // 
             // dropHarga
             // 
@@ -494,7 +495,7 @@
             this.bunifuPictureBox1.BorderRadius = 0;
             this.bunifuPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuPictureBox1.Image")));
             this.bunifuPictureBox1.IsCircle = false;
-            this.bunifuPictureBox1.Location = new System.Drawing.Point(63, 274);
+            this.bunifuPictureBox1.Location = new System.Drawing.Point(52, 321);
             this.bunifuPictureBox1.Name = "bunifuPictureBox1";
             this.bunifuPictureBox1.Size = new System.Drawing.Size(140, 69);
             this.bunifuPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -586,7 +587,7 @@
             this.bunifuPictureBox2.BorderRadius = 0;
             this.bunifuPictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("bunifuPictureBox2.Image")));
             this.bunifuPictureBox2.IsCircle = false;
-            this.bunifuPictureBox2.Location = new System.Drawing.Point(63, 43);
+            this.bunifuPictureBox2.Location = new System.Drawing.Point(52, 90);
             this.bunifuPictureBox2.Name = "bunifuPictureBox2";
             this.bunifuPictureBox2.Size = new System.Drawing.Size(140, 69);
             this.bunifuPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -624,6 +625,7 @@
             this.bunifuIconButton2.Size = new System.Drawing.Size(44, 44);
             this.bunifuIconButton2.Style = Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.ButtonStyles.Flat;
             this.bunifuIconButton2.TabIndex = 32;
+            this.bunifuIconButton2.Click += new System.EventHandler(this.bunifuIconButton2_Click);
             // 
             // bunifuIconButton3
             // 
