@@ -14,6 +14,7 @@ namespace Rental.Model.Entity
         public string platNomer { get; set; }
         public string merek { get; set; }
         public string nama { get; set; }
+        public string namaUser { get; set; }
         public string img { get; set; }
     }
 }

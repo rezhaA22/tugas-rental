@@ -106,7 +106,7 @@ namespace Rental.Model.Repository
             try
             {
                 // deklarasi perintah SQL
-                string sql = $"SELECT T.status, K.IMG, K.MEREK, K.CATEGORY,K.NAMA, T.PLAT_NOMOR " +
+                string sql = $"SELECT T.Konfirmasi, K.IMG, K.MEREK, K.CATEGORY,K.NAMA, T.PLAT_NOMOR " +
                     $"FROM TRANSAKSI T JOIN KENDARAAN K ON T.PLAT_NOMOR = K.PLAT_NOMOR " +
                     $"WHERE T.ID_USER = {user.id}";
 
@@ -121,11 +121,56 @@ namespace Rental.Model.Repository
                         {
                             // proses konversi dari row result set ke object
                             TransaksiDanKendaraan transaksi = new TransaksiDanKendaraan();
-                            transaksi.status = dtr["status"].ToString();
+                            transaksi.status = dtr["Konfirmasi"].ToString();
                             transaksi.nama = dtr["NAMA"].ToString();
                             transaksi.merek = dtr["MEREK"].ToString();
                             transaksi.img = dtr["IMG"].ToString();
                             transaksi.platNomer= dtr["PLAT_NOMOR"].ToString();
+                            transaksi.categori = dtr["CATEGORY"].ToString();
+
+                            // tambahkan objek JenisKendaraan ke dalam collection
+                            list.Add(transaksi);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.Print("ReadAll error: {0}", ex.Message);
+            }
+
+            return list;
+        }
+
+        internal List<TransaksiDanKendaraan> getAllListTS()
+        {
+            // membuat objek collection untuk menampung objek JenisKendaraan
+            List<TransaksiDanKendaraan> list = new List<TransaksiDanKendaraan>();
+
+            try
+            {
+                // deklarasi perintah SQL
+                string sql = "SELECT T.Konfirmasi, K.IMG, K.MEREK, K.CATEGORY,K.NAMA AS kendaraan, T.PLAT_NOMOR,P.NAMA " +
+                                "FROM TRANSAKSI T JOIN KENDARAAN K ON T.PLAT_NOMOR = K.PLAT_NOMOR JOIN" +
+                                " PETUGAS P ON T.ID_USER = P.ID_PETUGAS";
+
+                // membuat objek command menggunakan blok using
+                using (SQLiteCommand cmd = new SQLiteCommand(sql, _conn))
+                {
+                    // membuat objek dtr (data reader) untuk menampung result set (hasil perintah SELECT)
+                    using (SQLiteDataReader dtr = cmd.ExecuteReader())
+                    {
+                        // panggil method Read untuk mendapatkan baris dari result set
+                        while (dtr.Read())
+                        {
+                            // proses konversi dari row result set ke object
+                            TransaksiDanKendaraan transaksi = new TransaksiDanKendaraan();
+                            transaksi.status = dtr["Konfirmasi"].ToString();
+                            transaksi.nama = dtr["kendaraan"].ToString();
+                            transaksi.namaUser = dtr["NAMA"].ToString();
+                            transaksi.merek = dtr["MEREK"].ToString();
+                            transaksi.img = dtr["IMG"].ToString();
+                            transaksi.platNomer = dtr["PLAT_NOMOR"].ToString();
                             transaksi.categori = dtr["CATEGORY"].ToString();
 
                             // tambahkan objek JenisKendaraan ke dalam collection

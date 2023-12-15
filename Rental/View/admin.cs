@@ -188,7 +188,7 @@ namespace Rental.View
 
         private void bunifuIconButton1_Click(object sender, EventArgs e)
         {
-
+            new daftarriwayatadmin().ShowDialog();
         }
     }
 }

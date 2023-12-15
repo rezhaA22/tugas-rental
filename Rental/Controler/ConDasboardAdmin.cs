@@ -1,4 +1,5 @@
-﻿using Rental.Model.Repository;
+﻿using Rental.Model.Entity;
+using Rental.Model.Repository;
 using Rental.Modell.Context;
 using Rental.Modell.Entity;
 using System;
@@ -17,12 +18,14 @@ namespace Rental.Controler
         RepoJenisKendaraan repojenis;
         RepoCategory repoCategory;
         RepoPetugas repoPetugas;
+        RepoTransaksi repoTransaksi;
         public ConDasboardAdmin()
         {
             repoKendaraan = new RepoKendaraan(context);
             repojenis = new RepoJenisKendaraan(context);
             repoCategory = new RepoCategory(context);
             repoPetugas = new RepoPetugas(context);
+            repoTransaksi = new RepoTransaksi(context);
 
         }
 
@@ -67,6 +70,11 @@ namespace Rental.Controler
             }
             return "";
             
+        }
+
+        internal List<TransaksiDanKendaraan> getAllTrasaksi()
+        {
+            return repoTransaksi.getAllListTS();
         }
 
         public List<Kendaraan> filterKendaraan(string jenis, string cat, string harga)
