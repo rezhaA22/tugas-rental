@@ -9,6 +9,7 @@ namespace Rental.Model.Entity
     class TransaksiDanKendaraan
     {
       
+        public string idTransaksi { get; set; }
         public string status { get; set; }
         public string categori { get; set; }
         public string platNomer { get; set; }

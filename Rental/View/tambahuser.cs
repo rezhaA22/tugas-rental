@@ -28,9 +28,10 @@ namespace Rental.View
             User.NomerTlp = bunifuTextBox4.Text;
             User.password = bunifuTextBox5.Text;
             string result = controler.addUser(User);
-            if (result.Equals(""))
+            int id;
+            if (int.TryParse(result, out id))
             {
-                MessageBox.Show("ADD USER BERHASIL", "SUCCSES",
+                MessageBox.Show($"ADD USER BERHASIL\n ID: {id}", "SUCCSES",
                  MessageBoxButtons.OK,
                   MessageBoxIcon.Information);
                  bunifuTextBox1.Text="";

@@ -233,6 +233,7 @@
     <Compile Include="Controler\ConTrasaksi.cs" />
     <Compile Include="Model\Entity\Login.cs" />
     <Compile Include="Model\Entity\TransaksiDanKendaraan.cs" />
+    <Compile Include="Model\Entity\TrasaksiDetail.cs" />
     <Compile Include="View\admin.cs">
       <SubType>Form</SubType>
     </Compile>

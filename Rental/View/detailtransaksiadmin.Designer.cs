@@ -44,7 +44,6 @@
             this.bunifuLabel30 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuLabel31 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuLabel32 = new Bunifu.UI.WinForms.BunifuLabel();
-            this.imgmobil = new Bunifu.UI.WinForms.BunifuShapes();
             this.bunifuLabel17 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuShapes2 = new Bunifu.UI.WinForms.BunifuShapes();
             this.denda = new Bunifu.UI.WinForms.BunifuLabel();
@@ -60,6 +59,10 @@
             this.bunifuLabel1 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuLabel18 = new Bunifu.UI.WinForms.BunifuLabel();
             this.totalbayar = new Bunifu.UI.WinForms.BunifuLabel();
+            this.imgMobil = new System.Windows.Forms.PictureBox();
+            this.tglHaruskembali = new Bunifu.UI.WinForms.BunifuDatePicker();
+            this.bunifuLabel6 = new Bunifu.UI.WinForms.BunifuLabel();
+            ((System.ComponentModel.ISupportInitialize)(this.imgMobil)).BeginInit();
             this.SuspendLayout();
             // 
             // tipe
@@ -141,11 +144,12 @@
             this.tglkembali.IconColor = System.Drawing.Color.Gray;
             this.tglkembali.IconLocation = Bunifu.UI.WinForms.BunifuDatePicker.Indicator.Right;
             this.tglkembali.LeftTextMargin = 5;
-            this.tglkembali.Location = new System.Drawing.Point(427, 333);
+            this.tglkembali.Location = new System.Drawing.Point(427, 386);
             this.tglkembali.MinimumSize = new System.Drawing.Size(4, 32);
             this.tglkembali.Name = "tglkembali";
             this.tglkembali.Size = new System.Drawing.Size(204, 32);
             this.tglkembali.TabIndex = 81;
+            this.tglkembali.ValueChanged += new System.EventHandler(this.tglkembali_ValueChanged);
             // 
             // tglsewa
             // 
@@ -159,6 +163,7 @@
             this.tglsewa.DisplayWeekNumbers = false;
             this.tglsewa.DPHeight = 0;
             this.tglsewa.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
+            this.tglsewa.Enabled = false;
             this.tglsewa.FillDatePicker = false;
             this.tglsewa.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tglsewa.ForeColor = System.Drawing.Color.Black;
@@ -262,6 +267,7 @@
             this.btnbayar.TextMarginLeft = 0;
             this.btnbayar.TextPadding = new System.Windows.Forms.Padding(0);
             this.btnbayar.UseDefaultRadiusAndThickness = true;
+            this.btnbayar.Click += new System.EventHandler(this.btnbayar_Click);
             // 
             // bunifuLabel33
             // 
@@ -273,9 +279,9 @@
             this.bunifuLabel33.Location = new System.Drawing.Point(762, 579);
             this.bunifuLabel33.Name = "bunifuLabel33";
             this.bunifuLabel33.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel33.Size = new System.Drawing.Size(103, 45);
+            this.bunifuLabel33.Size = new System.Drawing.Size(163, 45);
             this.bunifuLabel33.TabIndex = 76;
-            this.bunifuLabel33.Text = "Nissan";
+            this.bunifuLabel33.Text = "kendaraan";
             this.bunifuLabel33.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.bunifuLabel33.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
@@ -369,22 +375,6 @@
             this.bunifuLabel32.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.bunifuLabel32.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
-            // imgmobil
-            // 
-            this.imgmobil.Angle = 0F;
-            this.imgmobil.BackColor = System.Drawing.Color.Transparent;
-            this.imgmobil.BorderColor = System.Drawing.Color.Silver;
-            this.imgmobil.BorderThickness = 2;
-            this.imgmobil.FillColor = System.Drawing.Color.Transparent;
-            this.imgmobil.FillShape = true;
-            this.imgmobil.Location = new System.Drawing.Point(59, 573);
-            this.imgmobil.Name = "imgmobil";
-            this.imgmobil.Shape = Bunifu.UI.WinForms.BunifuShapes.Shapes.Rectangle;
-            this.imgmobil.Sides = 5;
-            this.imgmobil.Size = new System.Drawing.Size(608, 376);
-            this.imgmobil.TabIndex = 69;
-            this.imgmobil.Text = "bunifuShapes3";
-            // 
             // bunifuLabel17
             // 
             this.bunifuLabel17.AllowParentOverrides = false;
@@ -470,7 +460,7 @@
             this.bunifuLabel9.AutoEllipsis = false;
             this.bunifuLabel9.CursorType = null;
             this.bunifuLabel9.Font = new System.Drawing.Font("Segoe UI", 15F);
-            this.bunifuLabel9.Location = new System.Drawing.Point(57, 330);
+            this.bunifuLabel9.Location = new System.Drawing.Point(57, 383);
             this.bunifuLabel9.Name = "bunifuLabel9";
             this.bunifuLabel9.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.bunifuLabel9.Size = new System.Drawing.Size(186, 35);
@@ -621,11 +611,64 @@
             this.totalbayar.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.totalbayar.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
+            // imgMobil
+            // 
+            this.imgMobil.Location = new System.Drawing.Point(61, 594);
+            this.imgMobil.Name = "imgMobil";
+            this.imgMobil.Size = new System.Drawing.Size(585, 338);
+            this.imgMobil.TabIndex = 86;
+            this.imgMobil.TabStop = false;
+            // 
+            // tglHaruskembali
+            // 
+            this.tglHaruskembali.BackColor = System.Drawing.Color.Transparent;
+            this.tglHaruskembali.BorderColor = System.Drawing.Color.Silver;
+            this.tglHaruskembali.BorderRadius = 1;
+            this.tglHaruskembali.Color = System.Drawing.Color.Silver;
+            this.tglHaruskembali.DateBorderThickness = Bunifu.UI.WinForms.BunifuDatePicker.BorderThickness.Thin;
+            this.tglHaruskembali.DateTextAlign = Bunifu.UI.WinForms.BunifuDatePicker.TextAlign.Left;
+            this.tglHaruskembali.DisabledColor = System.Drawing.Color.Gray;
+            this.tglHaruskembali.DisplayWeekNumbers = false;
+            this.tglHaruskembali.DPHeight = 0;
+            this.tglHaruskembali.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
+            this.tglHaruskembali.Enabled = false;
+            this.tglHaruskembali.FillDatePicker = false;
+            this.tglHaruskembali.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.tglHaruskembali.ForeColor = System.Drawing.Color.Black;
+            this.tglHaruskembali.Icon = ((System.Drawing.Image)(resources.GetObject("tglHaruskembali.Icon")));
+            this.tglHaruskembali.IconColor = System.Drawing.Color.Gray;
+            this.tglHaruskembali.IconLocation = Bunifu.UI.WinForms.BunifuDatePicker.Indicator.Right;
+            this.tglHaruskembali.LeftTextMargin = 5;
+            this.tglHaruskembali.Location = new System.Drawing.Point(427, 339);
+            this.tglHaruskembali.MinimumSize = new System.Drawing.Size(4, 32);
+            this.tglHaruskembali.Name = "tglHaruskembali";
+            this.tglHaruskembali.Size = new System.Drawing.Size(204, 32);
+            this.tglHaruskembali.TabIndex = 88;
+            // 
+            // bunifuLabel6
+            // 
+            this.bunifuLabel6.AllowParentOverrides = false;
+            this.bunifuLabel6.AutoEllipsis = false;
+            this.bunifuLabel6.CursorType = null;
+            this.bunifuLabel6.Font = new System.Drawing.Font("Segoe UI", 15F);
+            this.bunifuLabel6.Location = new System.Drawing.Point(57, 336);
+            this.bunifuLabel6.Name = "bunifuLabel6";
+            this.bunifuLabel6.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.bunifuLabel6.Size = new System.Drawing.Size(251, 35);
+            this.bunifuLabel6.TabIndex = 87;
+            this.bunifuLabel6.Text = "Tanggal harus kembali";
+            this.bunifuLabel6.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.bunifuLabel6.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
             // detailtransaksiadmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1422, 1142);
+            this.AutoScroll = true;
+            this.ClientSize = new System.Drawing.Size(1422, 1055);
+            this.Controls.Add(this.tglHaruskembali);
+            this.Controls.Add(this.bunifuLabel6);
+            this.Controls.Add(this.imgMobil);
             this.Controls.Add(this.tipe);
             this.Controls.Add(this.bunifuLabel10);
             this.Controls.Add(this.platnomor);
@@ -642,7 +685,6 @@
             this.Controls.Add(this.bunifuLabel30);
             this.Controls.Add(this.bunifuLabel31);
             this.Controls.Add(this.bunifuLabel32);
-            this.Controls.Add(this.imgmobil);
             this.Controls.Add(this.bunifuLabel17);
             this.Controls.Add(this.bunifuShapes2);
             this.Controls.Add(this.denda);
@@ -658,6 +700,8 @@
             this.Controls.Add(this.bunifuLabel1);
             this.Name = "detailtransaksiadmin";
             this.Text = "detailtransaksiadmin";
+            this.Load += new System.EventHandler(this.detailtransaksiadmin_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.imgMobil)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -679,7 +723,6 @@
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel30;
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel31;
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel32;
-        private Bunifu.UI.WinForms.BunifuShapes imgmobil;
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel17;
         private Bunifu.UI.WinForms.BunifuShapes bunifuShapes2;
         private Bunifu.UI.WinForms.BunifuLabel denda;
@@ -695,5 +738,8 @@
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel1;
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel18;
         private Bunifu.UI.WinForms.BunifuLabel totalbayar;
+        private System.Windows.Forms.PictureBox imgMobil;
+        private Bunifu.UI.WinForms.BunifuDatePicker tglHaruskembali;
+        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel6;
     }
 }

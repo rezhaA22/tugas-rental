@@ -26,8 +26,9 @@ namespace Rental.Model.Repository
             int result = 0;
 
             // deklarasi perintah SQL
-            string sql = @"insert into PETUGAS (NAMA,ALAMAT,NOMOR_TELEPHONE,PASSWORD,Hak_akses)
-                           values (@nama, @alamat,@no,@pas,@hak)";
+            string sql = @"insert into PETUGAS(NAMA, ALAMAT, NOMOR_TELEPHONE, PASSWORD, Hak_akses)
+                        values(@nama, @alamat, @no, @pas, @hak);
+                        select last_insert_rowid(); ";
 
             // membuat objek command menggunakan blok using
             using (SQLiteCommand cmd = new SQLiteCommand(sql, _conn))
@@ -42,7 +43,7 @@ namespace Rental.Model.Repository
                 try
                 {
                     // jalankan perintah INSERT dan tampung hasilnya ke dalam variabel result
-                    result = cmd.ExecuteNonQuery();
+                    result = Convert.ToInt32(cmd.ExecuteScalar());
                 }
                 catch (Exception ex)
                 {

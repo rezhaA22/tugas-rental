@@ -98,6 +98,75 @@ namespace Rental.Model.Repository
             return result;
         }
 
+        internal int selesaiTrasaksi(TrasaksiDetail detailTS)
+        {
+            int result = 0;
+
+            // deklarasi perintah SQL
+            string sql = @"UPDATE TRANSAKSI SET
+                                            TGL_KEMBALI = @tglKem,
+                                            ID_PETUGAS=@petugas,
+                                            DENDA = @denda,
+                                            TOTAL = @total,
+                                            STATUS = @status
+                                            WHERE ID_TRANSAKSI = @id;";
+
+            // membuat objek command menggunakan blok using
+            using (SQLiteCommand cmd = new SQLiteCommand(sql, _conn))
+            {
+                // mendaftarkan parameter dan mengeset nilainya
+                cmd.Parameters.AddWithValue("@tglKem", detailTS.tgl_kembali);
+                cmd.Parameters.AddWithValue("@petugas", detailTS.id_petugas);
+                cmd.Parameters.AddWithValue("@denda", detailTS.denda);
+                cmd.Parameters.AddWithValue("@total", detailTS.total);
+                cmd.Parameters.AddWithValue("@status", detailTS.status);
+                cmd.Parameters.AddWithValue("@id", detailTS.id);
+
+                try
+                {
+                    // jalankan perintah INSERT dan tampung hasilnya ke dalam variabel result
+                    result = cmd.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.Print("Create error: {0}", ex.Message);
+                }
+            }
+
+            return result;
+        }
+
+        public int konirmasi(Petugas petugas,string idts)
+        {
+            int result = 0;
+
+            // deklarasi perintah SQL
+            string sql = @"UPDATE TRANSAKSI SET
+                                            ID_PETUGAS = @petugas,
+                                            Konfirmasi = 'sudah'
+                                            WHERE ID_TRANSAKSI = @id;";
+
+            // membuat objek command menggunakan blok using
+            using (SQLiteCommand cmd = new SQLiteCommand(sql, _conn))
+            {
+                // mendaftarkan parameter dan mengeset nilainya
+                cmd.Parameters.AddWithValue("@petugas", petugas.id);
+                cmd.Parameters.AddWithValue("@id", idts);
+
+                try
+                {
+                    // jalankan perintah INSERT dan tampung hasilnya ke dalam variabel result
+                    result = cmd.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.Print("Create error: {0}", ex.Message);
+                }
+            }
+
+            return result;
+        }
+
         internal List<TransaksiDanKendaraan> getListTS(Petugas user)
         {
             // membuat objek collection untuk menampung objek JenisKendaraan
@@ -150,9 +219,9 @@ namespace Rental.Model.Repository
             try
             {
                 // deklarasi perintah SQL
-                string sql = "SELECT T.Konfirmasi, K.IMG, K.MEREK, K.CATEGORY,K.NAMA AS kendaraan, T.PLAT_NOMOR,P.NAMA " +
+                string sql = "SELECT T.Konfirmasi, K.IMG, K.MEREK, K.CATEGORY,K.NAMA AS kendaraan, T.PLAT_NOMOR,T.ID_TRANSAKSI,P.NAMA " +
                                 "FROM TRANSAKSI T JOIN KENDARAAN K ON T.PLAT_NOMOR = K.PLAT_NOMOR JOIN" +
-                                " PETUGAS P ON T.ID_USER = P.ID_PETUGAS";
+                                " PETUGAS P ON T.ID_USER = P.ID_PETUGAS ORDER BY T.Konfirmasi DESC";
 
                 // membuat objek command menggunakan blok using
                 using (SQLiteCommand cmd = new SQLiteCommand(sql, _conn))
@@ -165,6 +234,7 @@ namespace Rental.Model.Repository
                         {
                             // proses konversi dari row result set ke object
                             TransaksiDanKendaraan transaksi = new TransaksiDanKendaraan();
+                            transaksi.idTransaksi = dtr["ID_TRANSAKSI"].ToString();
                             transaksi.status = dtr["Konfirmasi"].ToString();
                             transaksi.nama = dtr["kendaraan"].ToString();
                             transaksi.namaUser = dtr["NAMA"].ToString();
@@ -185,6 +255,58 @@ namespace Rental.Model.Repository
             }
 
             return list;
+        }
+
+        internal TrasaksiDetail GetDetailTS(string id)
+        {
+            // membuat objek collection untuk menampung objek JenisKendaraan
+            TrasaksiDetail trasaksiDetail = new TrasaksiDetail();
+
+            try
+            {
+                // deklarasi perintah SQL
+                string sql = $"SELECT   T.*," +
+                    $"K.MEREK, K.CATEGORY,K.NAMA AS kendaraan,K.IMG,K.JENIS_KENDARAAN," +
+                    $"P.NAMA " +
+                    $"FROM TRANSAKSI T JOIN KENDARAAN K ON T.PLAT_NOMOR = K.PLAT_NOMOR JOIN PETUGAS P ON T.ID_USER = P.ID_PETUGAS WHERE T.ID_TRANSAKSI = {id}";
+
+                // membuat objek command menggunakan blok using
+                using (SQLiteCommand cmd = new SQLiteCommand(sql, _conn))
+                {
+                    // membuat objek dtr (data reader) untuk menampung result set (hasil perintah SELECT)
+                    using (SQLiteDataReader dtr = cmd.ExecuteReader())
+                    {
+
+                        if (dtr.Read())
+                        {
+                            // proses konversi dari row result set ke object
+                            trasaksiDetail.id = dtr["ID_TRANSAKSI"].ToString();
+                            trasaksiDetail.id_user = dtr["ID_USER"].ToString();
+                            trasaksiDetail.id_petugas = dtr["ID_PETUGAS"].ToString();
+                            trasaksiDetail.tgl_sewa = dtr["TGL_SEWA"].ToString();
+                            trasaksiDetail.tgl_kembali = dtr["TGL_KEMBALI"].ToString();
+                            trasaksiDetail.tgl_harusKembali = dtr["TGL_HARUS_KEMBALI"].ToString();
+                            trasaksiDetail.denda = dtr["DENDA"].ToString();
+                            trasaksiDetail.harga = dtr["HARGA"].ToString();
+                            trasaksiDetail.total = dtr["TOTAL"].ToString();
+                            trasaksiDetail.status = dtr["Konfirmasi"].ToString();
+                            trasaksiDetail.namaUser = dtr["NAMA"].ToString();
+                            trasaksiDetail.merek = dtr["MEREK"].ToString();
+                            trasaksiDetail.namaKendaraan = dtr["kendaraan"].ToString();
+                            trasaksiDetail.categori = dtr["CATEGORY"].ToString();
+                            trasaksiDetail.jenis_kendaraan = dtr["JENIS_KENDARAAN"].ToString();
+                            trasaksiDetail.img = dtr["IMG"].ToString();
+                            trasaksiDetail.platNomer = dtr["PLAT_NOMOR"].ToString();
+                        };
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.Print("ReadAll error: {0}", ex.Message);
+            }
+
+            return trasaksiDetail;
         }
 
         public List<Transaksi> ReadAll()

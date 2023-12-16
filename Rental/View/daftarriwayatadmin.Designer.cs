@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(daftarriwayatadmin));
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             this.listview = new System.Windows.Forms.ListView();
             this.btnkonfirmasi = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.SuspendLayout();
@@ -39,7 +39,7 @@
             this.listview.HideSelection = false;
             this.listview.Location = new System.Drawing.Point(24, 20);
             this.listview.Name = "listview";
-            this.listview.Size = new System.Drawing.Size(1269, 733);
+            this.listview.Size = new System.Drawing.Size(1356, 733);
             this.listview.TabIndex = 0;
             this.listview.UseCompatibleStateImageBehavior = false;
             this.listview.SelectedIndexChanged += new System.EventHandler(this.ListView1_SelectedIndexChanged);
@@ -63,11 +63,11 @@
             this.btnkonfirmasi.ColorContrastOnClick = 45;
             this.btnkonfirmasi.ColorContrastOnHover = 45;
             this.btnkonfirmasi.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges3.BottomLeft = true;
-            borderEdges3.BottomRight = true;
-            borderEdges3.TopLeft = true;
-            borderEdges3.TopRight = true;
-            this.btnkonfirmasi.CustomizableEdges = borderEdges3;
+            borderEdges1.BottomLeft = true;
+            borderEdges1.BottomRight = true;
+            borderEdges1.TopLeft = true;
+            borderEdges1.TopRight = true;
+            this.btnkonfirmasi.CustomizableEdges = borderEdges1;
             this.btnkonfirmasi.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnkonfirmasi.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnkonfirmasi.DisabledFillColor = System.Drawing.Color.Empty;

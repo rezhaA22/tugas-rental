@@ -15,56 +15,92 @@ namespace Rental.View
 {
     public partial class daftarriwayatadmin : Form
     {
+        Petugas adminLogin;
 
         ConDasboardAdmin controler = new ConDasboardAdmin();
-        public daftarriwayatadmin()
+        public daftarriwayatadmin(Petugas admin)
         {
+            this.adminLogin = admin;
             InitializeComponent();
-            InisialisasiListView();
         }
 
         private void daftarriwayatadmin_Load(object sender, EventArgs e)
         {
-            addListTS();
+            LoadList();
         }
 
         private void ListView1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
-        private void InisialisasiListView()
+
+        public void LoadList()
         {
+            listview.Clear();
+
             listview.View = System.Windows.Forms.View.Details;
             listview.FullRowSelect = true;
             listview.GridLines = true;
+            listview.Columns.Add("id.").Width = 0;
             listview.Columns.Add("No.", 35, HorizontalAlignment.Center);
             listview.Columns.Add("Nama", 91, HorizontalAlignment.Center);
             listview.Columns.Add("Plat Nomor", 200, HorizontalAlignment.Left);
             listview.Columns.Add("Nama Kendaraan", 200, HorizontalAlignment.Center);
             listview.Columns.Add("konfirmasi", 100, HorizontalAlignment.Center);
-        }
+            listview.MouseDoubleClick += ListViewItem_DoubleClick;
 
-        public void addListTS()
-        {
             List<TransaksiDanKendaraan> listTS = controler.getAllTrasaksi();
             for(int i =0; i < listTS.Count; i++)
             {
                 TransaksiDanKendaraan transaksi = listTS[i];
-                ListViewItem item = new ListViewItem((i+1).ToString());
+                ListViewItem item = new ListViewItem(transaksi.idTransaksi);
+                item.SubItems.Add((i+1).ToString());
                 item.SubItems.Add(transaksi.namaUser);
                 item.SubItems.Add(transaksi.platNomer);
                 item.SubItems.Add(transaksi.nama);
                 item.SubItems.Add(transaksi.status);
-
                 listview.Items.Add(item);
             }
 
         }
+        private void ListViewItem_DoubleClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ListView listView = (ListView)sender;
+
+                // Mendapatkan item yang di-klik
+                ListViewItem doubleClickedItem = listView.SelectedItems[0];
+
+                if (doubleClickedItem != null)
+                {
+                    // Logika yang akan dijalankan saat item ListView di double-click
+                    string id = doubleClickedItem.SubItems[0].Text; // Ganti dengan indeks kolom yang sesuai
+                    new detailtransaksiadmin(adminLogin, id).ShowDialog();
+                }
+            }
+        }
+
 
 
 
         private void bunifuButton1_Click(object sender, EventArgs e)
         {
+            if (listview.SelectedItems.Count <= 0)
+            {
+                MessageBox.Show("pilih minimal 1 item", "GAGAL",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            int pesan = 0;
+            foreach(ListViewItem item in listview.SelectedItems)
+            {
+                string id = item.SubItems[0].Text;
+                pesan += controler.konfirmasi(adminLogin, id);
+            }
+            LoadList();
+            MessageBox.Show($"{pesan} terasaksi berhasil di konfirmasi", "berhasil",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
         }
 

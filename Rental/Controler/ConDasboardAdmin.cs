@@ -29,6 +29,11 @@ namespace Rental.Controler
 
         }
 
+        internal TrasaksiDetail getDetailTS(string idTS)
+        {
+            return repoTransaksi.GetDetailTS(idTS);
+        }
+
         public List<Kendaraan> ReadKendaraan()
         {
             List<Kendaraan> list = new List<Kendaraan>();
@@ -64,11 +69,12 @@ namespace Rental.Controler
             }
             user.hakAkses = "User";
             user.password = Hasing.Encrypt(user.password);
-            if (repoPetugas.Create(user)<=0)
+            int id = repoPetugas.Create(user);
+            if (id<=0)
             {
                 return "gagal";
             }
-            return "";
+            return id.ToString();
             
         }
 
@@ -102,6 +108,17 @@ namespace Rental.Controler
             list = repojenis.ReadAll();
 
             return list;
+        }
+
+        internal int konfirmasi(Petugas adminLogin, string id)
+        {
+            return repoTransaksi.konirmasi(adminLogin,id);
+        }
+
+        internal int SelesaiKanTransaksi(TrasaksiDetail detailTS)
+        {
+            return repoTransaksi.selesaiTrasaksi(detailTS);
+                 
         }
 
         public List<Category> ReadCategory()
