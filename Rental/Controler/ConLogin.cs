@@ -23,7 +23,6 @@ namespace Rental.Controler
 
         public Petugas login(String id, string pass)
         {
-            Petugas user = repo.ReadLogin(id ,pass);
             string pesan = "";
 
             if (id.Equals(""))
@@ -40,7 +39,7 @@ namespace Rental.Controler
                         MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return null;
             }
-
+            Petugas user = repo.ReadLogin(id, pass);
 
             return user;
         }
