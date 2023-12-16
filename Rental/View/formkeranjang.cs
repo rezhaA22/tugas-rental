@@ -44,7 +44,7 @@ namespace Rental.View
                 listKeranjang.Merk = transaksi.merek;
                 listKeranjang.Plat = transaksi.platNomer;
                 listKeranjang.Tipe = transaksi.categori;
-                listKeranjang.Status = (transaksi.status.Equals("sudah")) ? "terkonfirmasi" : "belum terkonfirmasi";
+                listKeranjang.Status = (transaksi.konfirmasi.Equals("sudah")) ? "terkonfirmasi" : "belum terkonfirmasi";
                 listKeranjang.Foto = Path.Combine(Application.StartupPath, "../../Assetimg/" + transaksi.img);
 
                 flowLayoutPanel1.Controls.Add(listKeranjang);

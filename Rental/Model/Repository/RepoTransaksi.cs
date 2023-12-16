@@ -175,7 +175,7 @@ namespace Rental.Model.Repository
             try
             {
                 // deklarasi perintah SQL
-                string sql = $"SELECT T.Konfirmasi, K.IMG, K.MEREK, K.CATEGORY,K.NAMA, T.PLAT_NOMOR " +
+                string sql = $"SELECT T.Konfirmasi,T.STATUS, K.IMG, K.MEREK, K.CATEGORY,K.NAMA, T.PLAT_NOMOR " +
                     $"FROM TRANSAKSI T JOIN KENDARAAN K ON T.PLAT_NOMOR = K.PLAT_NOMOR " +
                     $"WHERE T.ID_USER = {user.id}";
 
@@ -190,7 +190,8 @@ namespace Rental.Model.Repository
                         {
                             // proses konversi dari row result set ke object
                             TransaksiDanKendaraan transaksi = new TransaksiDanKendaraan();
-                            transaksi.status = dtr["Konfirmasi"].ToString();
+                            transaksi.konfirmasi = dtr["Konfirmasi"].ToString();
+                            transaksi.status = dtr["STATUS"].ToString();
                             transaksi.nama = dtr["NAMA"].ToString();
                             transaksi.merek = dtr["MEREK"].ToString();
                             transaksi.img = dtr["IMG"].ToString();
@@ -219,7 +220,7 @@ namespace Rental.Model.Repository
             try
             {
                 // deklarasi perintah SQL
-                string sql = "SELECT T.Konfirmasi, K.IMG, K.MEREK, K.CATEGORY,K.NAMA AS kendaraan, T.PLAT_NOMOR,T.ID_TRANSAKSI,P.NAMA " +
+                string sql = "SELECT T.Konfirmasi,T.STATUS, K.IMG, K.MEREK, K.CATEGORY,K.NAMA AS kendaraan, T.PLAT_NOMOR,T.ID_TRANSAKSI,P.NAMA " +
                                 "FROM TRANSAKSI T JOIN KENDARAAN K ON T.PLAT_NOMOR = K.PLAT_NOMOR JOIN" +
                                 " PETUGAS P ON T.ID_USER = P.ID_PETUGAS ORDER BY T.Konfirmasi DESC";
 
@@ -235,7 +236,8 @@ namespace Rental.Model.Repository
                             // proses konversi dari row result set ke object
                             TransaksiDanKendaraan transaksi = new TransaksiDanKendaraan();
                             transaksi.idTransaksi = dtr["ID_TRANSAKSI"].ToString();
-                            transaksi.status = dtr["Konfirmasi"].ToString();
+                            transaksi.konfirmasi = dtr["Konfirmasi"].ToString();
+                            transaksi.status = dtr["STATUS"].ToString();
                             transaksi.nama = dtr["kendaraan"].ToString();
                             transaksi.namaUser = dtr["NAMA"].ToString();
                             transaksi.merek = dtr["MEREK"].ToString();

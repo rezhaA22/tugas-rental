@@ -184,6 +184,7 @@ namespace Rental.View
         {
             tambahmobil Formtambahmobil = new tambahmobil();
             Formtambahmobil.ShowDialog();
+            updetList(repo.ReadKendaraan());
         }
 
         private void bunifuIconButton1_Click(object sender, EventArgs e)

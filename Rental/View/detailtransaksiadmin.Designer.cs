@@ -616,6 +616,7 @@
             this.imgMobil.Location = new System.Drawing.Point(61, 594);
             this.imgMobil.Name = "imgMobil";
             this.imgMobil.Size = new System.Drawing.Size(585, 338);
+            this.imgMobil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.imgMobil.TabIndex = 86;
             this.imgMobil.TabStop = false;
             // 

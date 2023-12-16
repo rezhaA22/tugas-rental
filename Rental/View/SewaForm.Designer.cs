@@ -373,7 +373,7 @@ namespace Rental.View
             this.btnbayar.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(122)))), ((int)(((byte)(183)))));
             this.btnbayar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnbayar.BackgroundImage")));
             this.btnbayar.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnbayar.ButtonText = "BAYAR";
+            this.btnbayar.ButtonText = "Buat pesanan";
             this.btnbayar.ButtonTextMarginLeft = 0;
             this.btnbayar.ColorContrastOnClick = 45;
             this.btnbayar.ColorContrastOnHover = 45;

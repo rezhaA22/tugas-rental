@@ -15,6 +15,7 @@ namespace Rental.View
 {
     public partial class daftarriwayatadmin : Form
     {
+        
         Petugas adminLogin;
 
         ConDasboardAdmin controler = new ConDasboardAdmin();
@@ -47,6 +48,7 @@ namespace Rental.View
             listview.Columns.Add("Plat Nomor", 200, HorizontalAlignment.Left);
             listview.Columns.Add("Nama Kendaraan", 200, HorizontalAlignment.Center);
             listview.Columns.Add("konfirmasi", 100, HorizontalAlignment.Center);
+            listview.Columns.Add("Status", 100, HorizontalAlignment.Center);
             listview.MouseDoubleClick += ListViewItem_DoubleClick;
 
             List<TransaksiDanKendaraan> listTS = controler.getAllTrasaksi();
@@ -58,6 +60,7 @@ namespace Rental.View
                 item.SubItems.Add(transaksi.namaUser);
                 item.SubItems.Add(transaksi.platNomer);
                 item.SubItems.Add(transaksi.nama);
+                item.SubItems.Add(transaksi.konfirmasi);
                 item.SubItems.Add(transaksi.status);
                 listview.Items.Add(item);
             }
@@ -69,14 +72,14 @@ namespace Rental.View
             {
                 ListView listView = (ListView)sender;
 
-                // Mendapatkan item yang di-klik
-                ListViewItem doubleClickedItem = listView.SelectedItems[0];
-
-                if (doubleClickedItem != null)
+                if (listView.SelectedItems.Count > 0)
                 {
-                    // Logika yang akan dijalankan saat item ListView di double-click
-                    string id = doubleClickedItem.SubItems[0].Text; // Ganti dengan indeks kolom yang sesuai
+                    // Mendapatkan item yang di-klik
+                    ListViewItem doubleClickedItem = listView.SelectedItems[0];
+
+                    string id = doubleClickedItem.SubItems[0].Text; 
                     new detailtransaksiadmin(adminLogin, id).ShowDialog();
+                    LoadList();
                 }
             }
         }
