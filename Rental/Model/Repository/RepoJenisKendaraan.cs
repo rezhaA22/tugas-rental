@@ -90,12 +90,6 @@ namespace Rental.Model.Repository
             return list;
         }
 
-
-       
-
-
-
-
         // Method untuk menampilkan data mahasiwa berdasarkan pencarian nama
 
     }
