@@ -285,6 +285,12 @@
     <Compile Include="View\formkeranjang.Designer.cs">
       <DependentUpon>formkeranjang.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\GantiPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\GantiPassword.Designer.cs">
+      <DependentUpon>GantiPassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\list item\listKeranjang.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -348,6 +354,9 @@
     </Compile>
     <EmbeddedResource Include="View\formkeranjang.resx">
       <DependentUpon>formkeranjang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\GantiPassword.resx">
+      <DependentUpon>GantiPassword.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\list item\listKeranjang.resx">
       <DependentUpon>listKeranjang.cs</DependentUpon>

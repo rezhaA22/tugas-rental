@@ -35,6 +35,7 @@
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties4 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderEdges();
             this.bunifuPictureBox1 = new Bunifu.UI.WinForms.BunifuPictureBox();
             this.bunifuTextBox1 = new Bunifu.UI.WinForms.BunifuTextBox();
             this.bunifuButton1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
@@ -53,6 +54,7 @@
             this.bunifuLabel2 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuLabel1 = new Bunifu.UI.WinForms.BunifuLabel();
             this.bunifuIconButton1 = new Bunifu.UI.WinForms.BunifuButton.BunifuIconButton();
+            this.gantiPass = new Bunifu.UI.WinForms.BunifuButton.BunifuIconButton();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -67,7 +69,7 @@
             this.bunifuPictureBox1.BorderRadius = 0;
             this.bunifuPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuPictureBox1.Image")));
             this.bunifuPictureBox1.IsCircle = false;
-            this.bunifuPictureBox1.Location = new System.Drawing.Point(54, 100);
+            this.bunifuPictureBox1.Location = new System.Drawing.Point(44, 130);
             this.bunifuPictureBox1.Name = "bunifuPictureBox1";
             this.bunifuPictureBox1.Size = new System.Drawing.Size(140, 69);
             this.bunifuPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -200,7 +202,7 @@
             this.bunifuButton1.IdleIconLeftImage = null;
             this.bunifuButton1.IdleIconRightImage = null;
             this.bunifuButton1.IndicateFocus = false;
-            this.bunifuButton1.Location = new System.Drawing.Point(1058, 18);
+            this.bunifuButton1.Location = new System.Drawing.Point(1044, 18);
             this.bunifuButton1.Name = "bunifuButton1";
             this.bunifuButton1.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.bunifuButton1.OnDisabledState.BorderRadius = 1;
@@ -562,7 +564,7 @@
             this.bunifuIconButton1.DialogResult = System.Windows.Forms.DialogResult.None;
             this.bunifuIconButton1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuIconButton1.Image")));
             this.bunifuIconButton1.ImageMargin = new System.Windows.Forms.Padding(0);
-            this.bunifuIconButton1.Location = new System.Drawing.Point(1291, 18);
+            this.bunifuIconButton1.Location = new System.Drawing.Point(1264, 18);
             this.bunifuIconButton1.Name = "bunifuIconButton1";
             this.bunifuIconButton1.RoundBorders = false;
             this.bunifuIconButton1.ShowBorders = true;
@@ -571,6 +573,38 @@
             this.bunifuIconButton1.TabIndex = 19;
             this.bunifuIconButton1.Click += new System.EventHandler(this.bunifuIconButton1_Click);
             // 
+            // gantiPass
+            // 
+            this.gantiPass.AllowAnimations = true;
+            this.gantiPass.AllowBorderColorChanges = true;
+            this.gantiPass.AllowMouseEffects = true;
+            this.gantiPass.AnimationSpeed = 200;
+            this.gantiPass.BackColor = System.Drawing.Color.Transparent;
+            this.gantiPass.BackgroundColor = System.Drawing.Color.Transparent;
+            this.gantiPass.BorderColor = System.Drawing.Color.Transparent;
+            this.gantiPass.BorderRadius = 1;
+            this.gantiPass.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.BorderStyles.Solid;
+            this.gantiPass.BorderThickness = 1;
+            this.gantiPass.ColorContrastOnClick = 30;
+            this.gantiPass.ColorContrastOnHover = 30;
+            this.gantiPass.Cursor = System.Windows.Forms.Cursors.Default;
+            borderEdges3.BottomLeft = true;
+            borderEdges3.BottomRight = true;
+            borderEdges3.TopLeft = true;
+            borderEdges3.TopRight = true;
+            this.gantiPass.CustomizableEdges = borderEdges3;
+            this.gantiPass.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.gantiPass.Image = ((System.Drawing.Image)(resources.GetObject("gantiPass.Image")));
+            this.gantiPass.ImageMargin = new System.Windows.Forms.Padding(0);
+            this.gantiPass.Location = new System.Drawing.Point(1314, 18);
+            this.gantiPass.Name = "gantiPass";
+            this.gantiPass.RoundBorders = false;
+            this.gantiPass.ShowBorders = true;
+            this.gantiPass.Size = new System.Drawing.Size(44, 44);
+            this.gantiPass.Style = Bunifu.UI.WinForms.BunifuButton.BunifuIconButton.ButtonStyles.Flat;
+            this.gantiPass.TabIndex = 20;
+            this.gantiPass.Click += new System.EventHandler(this.gantiPass_Click);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -578,6 +612,7 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1421, 1055);
+            this.Controls.Add(this.gantiPass);
             this.Controls.Add(this.bunifuIconButton1);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
@@ -623,5 +658,6 @@
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel2;
         private Bunifu.UI.WinForms.BunifuLabel bunifuLabel1;
         private Bunifu.UI.WinForms.BunifuButton.BunifuIconButton bunifuIconButton1;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuIconButton gantiPass;
     }
 }

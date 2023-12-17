@@ -18,12 +18,14 @@ namespace Rental.Controler
         RepoJenisKendaraan repojenis;
         RepoCategory repoCategory;
         RepoTransaksi repoTrasaksi;
+        RepoPetugas repoPpetugas;
         public ConDasbord()
         {
             repoKendaraan = new RepoKendaraan(context);
             repojenis = new RepoJenisKendaraan(context);
             repoCategory = new RepoCategory(context);
             repoTrasaksi = new RepoTransaksi(context);
+            repoPpetugas = new RepoPetugas(context);
         }
 
         public List<Kendaraan> ReadKendaraan()
@@ -88,8 +90,10 @@ namespace Rental.Controler
             return listTS;
         }
 
-
-
+        internal int updetPass(string passB,Petugas user)
+        {
+            return repoPpetugas.UpdetPass(Hasing.Encrypt(passB), user);
+        }
     }
 
 }

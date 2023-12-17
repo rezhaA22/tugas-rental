@@ -177,9 +177,32 @@ namespace Rental
 
         }
 
+        public void UpdetePass(string passB)
+        {
+            if (repo.updetPass(passB,UserLogin) <= 0)
+            {
+                MessageBox.Show("password gagal di ganti", "gagal",
+                MessageBoxButtons.OK,
+                 MessageBoxIcon.Warning);
+                return;
+            }
+            MessageBox.Show("password telah di ganti", "berhasil",
+                MessageBoxButtons.OK,
+                 MessageBoxIcon.Information);
+
+        } 
+
         private void bunifuIconButton1_Click(object sender, EventArgs e)
         {
             new formkeranjang(UserLogin).ShowDialog();
+
+        }
+
+        private void gantiPass_Click(object sender, EventArgs e)
+        {
+            GantiPassword gantiPasswordForm = new GantiPassword(UserLogin);
+            gantiPasswordForm.UpdetPass += UpdetePass;
+            gantiPasswordForm.ShowDialog();
 
         }
     }

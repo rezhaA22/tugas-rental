@@ -85,6 +85,34 @@ namespace Rental.Model.Repository
             return result;
         }
 
+        internal int UpdetPass(string passB, Petugas user)
+        {
+            int result = 0;
+
+            // deklarasi perintah SQL
+            string sql = @"update PETUGAS set PASSWORD = @pass where ID_PETUGAS = @id";
+
+            // membuat objek command menggunakan blok using
+            using (SQLiteCommand cmd = new SQLiteCommand(sql, _conn))
+            {
+                // mendaftarkan parameter dan mengeset nilainya
+                cmd.Parameters.AddWithValue("@pass", passB);
+                cmd.Parameters.AddWithValue("@id", user.id);
+
+                try
+                {
+                    // jalankan perintah UPDATE dan tampung hasilnya ke dalam variabel result
+                    result = cmd.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.Print("Update error: {0}", ex.Message);
+                }
+            }
+
+            return result;
+        }
+
         public int Delete(Petugas petugas)
         {
             int result = 0;
